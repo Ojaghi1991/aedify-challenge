@@ -46,4 +46,14 @@ npm run dev
 
 check config/router.ts: you can fine all API there
 
+## Step 6
+
+Because the swagger is added for api document. You can access it by http://localhost:PortNumber/api-docs
+
+Example:
+
+```sh
+http://localhost:6600/api-docs
+```
+
 Good lock!
