@@ -3,9 +3,9 @@
  */
 
 const status = {
-    'Active':'Active',
-    'Canceled': 'Canceled',
-    'Completed': 'Completed'
-}
+  Active: 'Active',
+  Canceled: 'Canceled',
+  Completed: 'Completed',
+};
 
-export default status
+export default status;

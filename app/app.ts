@@ -8,16 +8,13 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
 // Routes
-import router from '../config/router'
+import router from '../config/router';
 
 const app = express();
 
-
 dotenv.config();
 
+app.use(bodyParser.json());
+app.use(router);
 
-
-app.use(bodyParser.json())
-app.use(router)
-
-export {  app }
+export { app };

@@ -3,10 +3,10 @@
  */
 
 export interface ProjectTypes {
-    projectName: string
-    budget: string
-    deadline: Date
-    id?: string
+  projectName: string;
+  budget: string;
+  deadline: Date;
+  id?: string;
 }
 
-export type ProjectIdType = Pick<ProjectTypes, 'id'>
+export type ProjectIdType = Pick<ProjectTypes, 'id'>;
