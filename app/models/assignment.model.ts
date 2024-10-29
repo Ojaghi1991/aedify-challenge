@@ -72,6 +72,7 @@ const AssignmentModel = {
     statusTime: AssignmentStatus
   ) => {
     const { end_time, status } = statusTime;
+
     const { personnel_id: personnelId, project_id: projectId } = ids;
     const sqlQuery =
       'UPDATE assignment SET end_time = $1, status = $2 WHERE personnel_id = $3 AND project_id=$4 RETURNING *';

@@ -154,7 +154,7 @@ const assignmentRouter = (router: Router) => {
   /**
    * @swagger
    * /assignment/status/:personnelId/:projectId:
-   *  delete:
+   *  put:
    *    parameters:
    *      - name: personnelId
    *        in: path

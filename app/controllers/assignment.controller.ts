@@ -10,10 +10,19 @@ import { Request, Response } from 'express';
 
 // Utils
 import errorHandler from '../../utils/errorHandler';
+import statusValidation from '../../utils/statusValidation';
 
 const assignmentController = {
   create: async (req: Request, res: Response) => {
     try {
+      const status = req.body.status;
+
+      if (!statusValidation(status)) {
+        return res.status(404).json({
+          message: 'Invalid Status',
+        });
+      }
+
       const assignment = await assignmentService.createAssignment(req.body);
       res.status(201).json(assignment);
     } catch (error: any) {
@@ -24,6 +33,13 @@ const assignmentController = {
     try {
       const projectId = req.params.projectId;
       const personnelId = req.params.personnelId;
+      const status = req.body.status;
+
+      if (!statusValidation(status)) {
+        return res.status(404).json({
+          message: 'Invalid Status',
+        });
+      }
 
       const assignment = await assignmentService.updateAssignment(
         { personnel_id: personnelId, project_id: projectId },
@@ -98,6 +114,12 @@ const assignmentController = {
       const projectId = req.params.projectId;
       const personnelId = req.params.personnelId;
       const status = req.body.status;
+
+      if (!statusValidation(status)) {
+        return res.status(404).json({
+          message: 'Invalid Status',
+        });
+      }
 
       const assignment = await assignmentService.updateAssignmentStatus(
         { personnel_id: projectId, project_id: personnelId },
