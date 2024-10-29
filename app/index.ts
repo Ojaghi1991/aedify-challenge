@@ -4,7 +4,7 @@
 
 // Package
 import { Pool, PoolConfig } from 'pg';
-
+import { Response, Request } from 'express';
 // Components
 import createTable from '../db/db.schema';
 import { app } from './app';
@@ -22,6 +22,11 @@ const dbConfig: PoolConfig = {
 
 // Set Config
 const pool = new Pool(dbConfig);
+
+// Base API
+app.get('/', (_: Request, res: Response) => {
+  res.status(200).json({ message: 'Server is Up and running...' });
+});
 
 app.listen(port, async () => {
   pool

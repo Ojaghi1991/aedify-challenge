@@ -3,7 +3,7 @@
 FROM postgres:latest
 
 # Enviroment Variable for initial password
-ENV POSTGRES_PASSWORD
+ENV POSTGRES_PASSWORD=mysecretpassword
 
 # Default Port for accessing to postgres
 EXPOSE 5432
