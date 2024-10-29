@@ -13,7 +13,58 @@ import projectController from '../app/controllers/project.controller';
 const router = express.Router();
 
 // Personnel Routes
+/**
+ * @swagger
+ * /personnels:
+ *  post:
+ *    parameters:
+ *      - name: fname
+ *        in: path
+ *        description: first name of person who work in industry
+ *        required: true
+ *        type: string
+ *      - name: lname
+ *        in: path
+ *        description: last name of person who work in industry
+ *        required: true
+ *        type: string
+ *      - name: phone
+ *        in: path
+ *        description: Phone of person who work in industry
+ *        required: true
+ *        type: string
+ *    description: please enter the required fields
+ *    responses:
+ *      '200':
+ *        description: Personel Created successfuly
+ */
 router.post('/personnels', personnelController.create);
+
+/**
+ * @swagger
+ * /personnels:
+ *  put:
+ *    parameters:
+ *      - name: fname
+ *        in: path
+ *        description: you can change the first name of person who work in industry
+ *        required: true
+ *        type: string
+ *      - name: lname
+ *        in: path
+ *        description: you can change the last name of person who work in industry
+ *        required: true
+ *        type: string
+ *      - name: phone
+ *        in: path
+ *        description: you can change the Phone of person who work in industry
+ *        required: true
+ *        type: string
+ *    description: please enter the required fields
+ *    responses:
+ *      '200':
+ *        description: Personel Updated successfuly
+ */
 router.put('/personnels/:id', personnelController.update);
 router.get('/personnels', personnelController.getAll);
 router.get('/personnels/:id', personnelController.getOne);

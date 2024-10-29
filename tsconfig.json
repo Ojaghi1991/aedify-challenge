@@ -16,7 +16,7 @@
     "strictPropertyInitialization": false,
     "types": ["node", "jest"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "swagger.ts"],
   "exclude": ["node_modules", "dist"],
 
   "ts-node": {
